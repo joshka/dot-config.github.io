@@ -19,7 +19,7 @@
 @media screen and (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
-    --paper: #181c1b;
+    --paper: #101413;
     --ink: #e5ece8;
     --body: #bdc9c2;
     --muted: #a3b1a9;
