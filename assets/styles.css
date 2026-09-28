@@ -1,4 +1,5 @@
 :root {
+  color-scheme: light;
   --paper: #f7f9f8;
   --ink: #182b24;
   --body: #44564e;
@@ -6,9 +7,34 @@
   --line: #d9e1db;
   --green: #285d40;
   --night: #242727;
+  --surface: #fff;
+  --surface-header: #f0f4f0;
+  --row-line: #e2e8e3;
+  --selected: #eaf1e9;
+  --selection: #d7e9d5;
+  --focus: #4a815d;
   --mono: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --paper: #181c1b;
+    --ink: #e5ece8;
+    --body: #bdc9c2;
+    --muted: #a3b1a9;
+    --line: #3b4740;
+    --green: #a5d4b5;
+    --night: #202524;
+    --surface: #202624;
+    --surface-header: #29312d;
+    --row-line: #36413b;
+    --selected: #30473a;
+    --selection: #365a43;
+    --focus: #a5d4b5;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -42,11 +68,11 @@ a:focus-visible,
 button:focus-visible,
 summary:focus-visible,
 [tabindex]:focus-visible {
-  outline: 2px solid #4a815d;
+  outline: 2px solid var(--focus);
   outline-offset: 5px;
 }
 ::selection {
-  background: #d7e9d5;
+  background: var(--selection);
   color: var(--ink);
 }
 code,
@@ -87,7 +113,7 @@ p + p {
   top: -70px;
   left: 20px;
   padding: 10px 16px;
-  color: white;
+  color: var(--paper);
   background: var(--ink);
   z-index: 10;
 }
@@ -308,7 +334,7 @@ h2 {
   overflow-x: auto;
   border: 1px solid var(--line);
   border-radius: 5px;
-  background: #fff;
+  background: var(--surface);
 }
 table {
   border-collapse: collapse;
@@ -319,14 +345,14 @@ table {
 thead th {
   font-weight: 500;
   color: var(--muted);
-  background: #f0f4f0;
+  background: var(--surface-header);
   font-size: 12px;
   padding: 11px 19px;
 }
 tbody th,
 tbody td {
   padding: 15px 19px;
-  border-top: 1px solid #e2e8e3;
+  border-top: 1px solid var(--row-line);
 }
 tbody th {
   font-weight: 550;
@@ -751,13 +777,13 @@ footer a:hover {
   padding: 8px 12px;
   border: 1px solid var(--line);
   border-radius: 5px;
-  background: white;
+  background: var(--surface);
   cursor: pointer;
   font-size: 13px;
 }
 .filter-option:has(input:checked) {
   border-color: var(--green);
-  background: #eaf1e9;
+  background: var(--selected);
   color: var(--green);
 }
 .filter-option:has(input:focus-visible) {

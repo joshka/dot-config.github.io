@@ -7,7 +7,17 @@ layout: null
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#f7f9f8" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="theme-color"
+      content="#f7f9f8"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#181c1b"
+      media="(prefers-color-scheme: dark)"
+    />
     <meta
       name="description"
       content="Help projects reduce root-directory clutter. Let your tool discover its configuration in .config/, using its existing file format."
